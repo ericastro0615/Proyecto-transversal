@@ -21,7 +21,7 @@ public class AlumnoData {
     public AlumnoData() {
         //inicializa solo la variable conexion
         con = Conexion.getConexion();
-        System.out.println("conectado DB");
+       
     }
 
     public void guardarAlumno(Alumno alumno) {
@@ -113,19 +113,28 @@ public class AlumnoData {
         
         
     }
-    public Alumno buscarAlumno(int id){
-        String sql=  "SELECT dni,apellido,nombre,fechaNacimiento FROM alumno WHERE idAlumno = ? AND estado = 1";
+    
+    
+    public Alumno buscarAlumno(int idAlumno){
+        String sql=  "SELECT * FROM alumno "
+                + " WHERE idAlumno = ? AND estado = 1";
         Alumno alumno = null;
         try {
             PreparedStatement  ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, idAlumno);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
+                int dni = rs.getInt("dni");
+                String apellido = rs.getString("apellido");
+                String nombre = rs.getString("nombre");
+                java.sql.Date fechaNacimiento = rs.getDate("fechaNacimiento");
+                boolean estado = rs.getBoolean("estado");
+
+                //se contruye obj alumno con los setters obt de DB
                 alumno= new Alumno();
-                alumno.setIdAlumno(id);
+                alumno.setDni(rs.getInt("dni")); 
                 alumno.setApellido(rs.getString("apellido"));
-                alumno.setDni(rs.getInt("dni"));
-                alumno.setNombre(rs.getString("nombre"));
+                alumno.setNombre(rs.getString("nombre")); 
                 alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
                 alumno.setEstado(true);
             }
@@ -138,8 +147,9 @@ public class AlumnoData {
         }
         return alumno;
     }
+    
     public Alumno buscarAlumnoPorDni(int dni){
-        String sql=  "SELECT idAlumno,dni,apellido,nombre,fechaNacimiento FROM alumno WHERE dni = ? AND estado = 1";
+        String sql=  "SELECT * FROM alumno WHERE dni = ? AND estado = 1";
         Alumno alumno = null;
         try {
             PreparedStatement  ps = con.prepareStatement(sql);
@@ -165,7 +175,7 @@ public class AlumnoData {
     }
     
     public List<Alumno> listarAlumnos(){
-        String sql=  "SELECT idAlumno,dni,apellido,nombre,fechaNacimiento FROM alumno WHERE estado = 1";
+        String sql=  "SELECT * FROM alumno WHERE estado = 1";
         ArrayList<Alumno> alumnos = new ArrayList<>();
         try {
             PreparedStatement  ps = con.prepareStatement(sql);
@@ -180,7 +190,6 @@ public class AlumnoData {
                 alumno.setEstado(true);
                 alumnos.add(alumno);
             }
-            
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al intentar acceder a la tabla alumno "+ex.getMessage());
