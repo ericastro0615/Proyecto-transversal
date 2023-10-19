@@ -5,8 +5,10 @@ import java.time.LocalDate;
 import java.util.List;
 import transversal_accesoDeDatos.AlumnoData;
 import transversal_accesoDeDatos.Conexion;
+import transversal_accesoDeDatos.MateriaData;
  
 import transversal_entidades.Alumno;
+import transversal_entidades.Materia;
 
 
 
@@ -22,6 +24,7 @@ public class Transversal {
         //  alumData.guardarAlumno(a2);
         //alumData.modificarAlumno(a2);
        // alumData.eliminarAlumno(14);
+       /*
        Alumno alumEncontrado =alumData.buscarAlumno(7);
             if (alumEncontrado != null) {
               System.out.printf("\n Búsqueda de alumno por id: \n Apellido: " + alumEncontrado.getApellido() + ".\n Nombre " + alumEncontrado.getNombre()+ "\n DNI: "+ alumEncontrado.getDni()+ "\n\n");
@@ -46,7 +49,11 @@ public class Transversal {
         for (Alumno alumno : listaAlumnos) {
             System.out.println("- Nombre: " + alumno.getNombre() + ", Apellido " + alumno.getApellido() + " ID: " + alumno.getIdAlumno() + ", DNI: " + alumno.getDni() );
         }
-
+        */
+        Materia mat1 = new Materia("Laboratorio 1", 1, true);
+        MateriaData matData = new MateriaData();
+        matData.guardarMateria(mat1);
+        
     }
 }
     
