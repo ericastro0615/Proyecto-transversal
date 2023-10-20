@@ -6,23 +6,20 @@ import java.util.List;
 import transversal_accesoDeDatos.AlumnoData;
 import transversal_accesoDeDatos.Conexion;
 import transversal_accesoDeDatos.MateriaData;
- 
 import transversal_entidades.Alumno;
 import transversal_entidades.Materia;
-
-
-
+ 
 
 public class Transversal {
 
     
     public static void main(String[] args) {
         Connection conexion = Conexion.getConexion();
-        Alumno a2 = new Alumno(14, 357452825, "Gutierrez", "Maria Agustina", LocalDate.of(1998, 7, 18), true);
+        Alumno a2 = new Alumno(14, 398456005, "Gutierrez", "Maria Ana", LocalDate.of(1997, 1, 18), true);
 
         AlumnoData alumData = new AlumnoData();
-        //  alumData.guardarAlumno(a2);
-        //alumData.modificarAlumno(a2);
+       //   alumData.guardarAlumno(a2);
+    //    alumData.modificarAlumno(a2);
        // alumData.eliminarAlumno(14);
        /*
        Alumno alumEncontrado =alumData.buscarAlumno(7);
@@ -50,11 +47,26 @@ public class Transversal {
             System.out.println("- Nombre: " + alumno.getNombre() + ", Apellido " + alumno.getApellido() + " ID: " + alumno.getIdAlumno() + ", DNI: " + alumno.getDni() );
         }
         */
-        Materia mat1 = new Materia("Laboratorio 1", 1, true);
-        MateriaData matData = new MateriaData();
-        matData.guardarMateria(mat1);
-        
-    }
+       Materia mat1 = new Materia(45, "matematica computacional", 2, true);
+      MateriaData matData = new MateriaData();
+    //    matData.guardarMateria(mat1);
+    /*
+       Materia materiaEncontrada = matData.buscarMateria(19);
+       if (materiaEncontrada!=null) {
+           System.out.println("Materia: " + materiaEncontrada.getNombre() + " ID: " + materiaEncontrada.getIdMateria());
+       }else {
+           System.out.println("No se ha encontrado una materia con el ID ingresado");
+       }
+*/
+    
+    /*
+       matData.modificarMateria(mat1);
+       System.out.println("Modificadación exitosa: \n" + mat1);
+      */
+        matData.eliminarMateria(27);
+   
+    
+}
 }
     
 

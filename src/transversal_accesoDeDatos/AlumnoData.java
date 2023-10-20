@@ -34,8 +34,8 @@ public class AlumnoData {
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));//localDate a Date
-            ps.setBoolean(5, alumno.isEstado()); // if reducido
-            ps.executeUpdate();
+            ps.setBoolean(5, alumno.isEstado());  
+            ps.executeUpdate(); 
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 alumno.setIdAlumno(rs.getInt("idAlumno"));
@@ -77,7 +77,7 @@ public class AlumnoData {
     public void modificarAlumno (Alumno alumno) {
         
         String sqlUpdate = "UPDATE alumno SET dni=?, apellido=?, nombre=?, fechaNacimiento=?"
-                + "WHERE idAlumno = ?";
+                + " WHERE idAlumno = ?";
         
         try {
              //setear parametros dinamicos
