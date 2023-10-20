@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2023 a las 03:55:52
+-- Tiempo de generación: 20-10-2023 a las 21:47:52
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ulp`
 --
-CREATE DATABASE IF NOT EXISTS `ulp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `ulp`;
 
 -- --------------------------------------------------------
 
@@ -47,7 +45,8 @@ INSERT INTO `alumno` (`idAlumno`, `dni`, `apellido`, `nombre`, `fechaNacimiento`
 (6, 34785426, 'Marin', 'Juan Ignacio', '2002-01-30', 1),
 (7, 3985427, 'Suarez', 'Maria', '2001-03-11', 1),
 (8, 31245125, 'Gomez', 'Patricio', '1992-04-08', 1),
-(14, 357452825, 'Gutierrez', 'Maria Agustina', '1998-07-18', 0);
+(14, 398456005, 'Gutierrez', 'Maria Ana', '1997-01-18', 0),
+(15, 39845645, 'Gutierrez', 'Maria Ana', '1997-01-18', 1);
 
 -- --------------------------------------------------------
 
@@ -71,7 +70,8 @@ INSERT INTO `inscripción` (`idInscripto`, `nota`, `idAlumno`, `idMateria`) VALU
 (20, 9, 1, 3),
 (21, 10, 6, 3),
 (23, 9, 7, 2),
-(24, 6, 7, 4);
+(24, 6, 7, 4),
+(34, 8, 15, 1);
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,13 @@ INSERT INTO `materia` (`idMateria`, `nombre`, `anio`, `estado`) VALUES
 (1, 'Programación 1', 1, 1),
 (2, 'Ingles Técnico', 2, 1),
 (3, 'Matemática', 1, 1),
-(4, 'Practicas profesionales', 3, 1);
+(4, 'Practicas profesionales', 3, 1),
+(19, 'Laboratorio 3', 1, 1),
+(21, 'Laboratorio 14', 1, 1),
+(22, 'Laboratorio 454', 1, 1),
+(23, 'matematica introductoria', 4, 0),
+(26, 'matematica analistica', 4, 1),
+(27, 'matematica analistica 2', 2, 0);
 
 --
 -- Índices para tablas volcadas
@@ -119,7 +125,9 @@ ALTER TABLE `inscripción`
 -- Indices de la tabla `materia`
 --
 ALTER TABLE `materia`
-  ADD PRIMARY KEY (`idMateria`);
+  ADD PRIMARY KEY (`idMateria`),
+  ADD UNIQUE KEY `nombre` (`nombre`),
+  ADD UNIQUE KEY `idMateria` (`idMateria`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -129,19 +137,19 @@ ALTER TABLE `materia`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `inscripción`
 --
 ALTER TABLE `inscripción`
-  MODIFY `idInscripto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `idInscripto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
 --
 ALTER TABLE `materia`
-  MODIFY `idMateria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idMateria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Restricciones para tablas volcadas

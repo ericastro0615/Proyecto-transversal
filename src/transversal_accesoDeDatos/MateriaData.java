@@ -142,18 +142,27 @@ public class MateriaData {
            ResultSet rs = ps.executeQuery();
            
            while (rs.next()) {
-               Materia materiaObj = new Materia
+            //get y luego seter para finalmente agregarla a la lista
                int idMateria = rs.getInt("idMateria");
                String nombre = rs.getString("nombre");
                int anioMateria = rs.getInt("anio");
-                materiaActivaList.setIdAlumno(rs.getInt("idAlumno"));
+               boolean activo = rs.getBoolean("estado");
+               
+               Materia materia = new Materia();
+               materia.setIdMateria(idMateria);
+               materia.setNombre(nombre);
+               materia.setAnioMateria(anioMateria);
+               materia.setActivo(activo);
+              
+               materiaActivaList.add(materia);
            }
-           
+           rs.close();
+           ps.close();
        } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Materia" + ex.getMessage());
        }
       
-       return null;
+       return materiaActivaList;
     
 }
    
