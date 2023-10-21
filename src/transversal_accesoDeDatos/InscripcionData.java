@@ -75,9 +75,9 @@ public class InscripcionData {
     }
      
      
-       public void actualizarNota (double nota, int idAlumno, int idMateria) {
+       public void actualizarNota (int idAlumno,int idMateria,double nota  ) {
              String sqlActualizar = "UPDATE inscripción SET nota = ? "
-                     + " WHERE idALumno=?";
+                     + " WHERE idALumno=? and idMateria = ?";
         try {
             PreparedStatement ps= conexion.prepareStatement(sqlActualizar);
             ps.setDouble(1, nota);
@@ -95,4 +95,19 @@ public class InscripcionData {
         }
              
          }
+       public void  borrarInscripcion(int idAlumno, int idMateria){
+           String sql = "DELETE FROM inscripción WHERE idAlumno = ? and idMateria = ?";
+        try {
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ps.setDouble(1,idAlumno);
+            ps.setInt(2, idMateria);
+            int filaActualizada =  ps.executeUpdate();
+           if(filaActualizada>0) {
+               JOptionPane.showMessageDialog(null, "inscripción borrada");
+           }
+           ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripción" + ex.getMessage());
+        }
+       }
 }
