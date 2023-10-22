@@ -160,4 +160,25 @@ public class InscripcionData {
         }
         return cursada;
         }
+        public List<Materia> obtenerMateriasCursadas(int idAlumno){
+            ArrayList<Materia> materias = new ArrayList<>();
+            String sql = "SELECT inscripción.idMateria,nombre,anio WHERE inscripción "+ "materia WHERE inscripción.idMateria = materia.idMateria"
+                    + "AND inscripción.idAlumno = ? ";
+        try {
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ps.setInt(1, idAlumno);
+            ResultSet  rs = ps.executeQuery();
+            while(rs.next()){
+                Materia materia = new Materia();
+                materia.setIdMateria(rs.getInt("idMateria"));
+                materia.setNombre(rs.getString("nombre"));
+                materia.setAnioMateria(rs.getInt("anio"));
+                materias.add(materia);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, " Error al acceder a la tabla inscripción" + ex.getMessage());
+        }
+        return materias;
+        }
 }
