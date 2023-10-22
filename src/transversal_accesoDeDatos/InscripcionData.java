@@ -6,15 +6,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import transversal_entidades.Alumno;
 import transversal_entidades.Inscripcion;
+import transversal_entidades.Materia;
 
  
 public class InscripcionData {
-    private MateriaData matData;
-    private  AlumnoData alumData;
+    private MateriaData matData = new MateriaData();
+    private  AlumnoData alumData = new AlumnoData();
     private Connection conexion=null;
     
      public InscripcionData () {
@@ -109,5 +113,28 @@ public class InscripcionData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripción" + ex.getMessage());
         }
+       
        }
+        public List<Inscripcion> obtenerInscripciones(){
+            ArrayList<Inscripcion>  cursada = new ArrayList<>();
+            String sql = "SELECT * FROM inscripción ";
+        try {
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ResultSet  rs = ps.executeQuery();
+            while(rs.next()){
+               Inscripcion inc = new Inscripcion();
+               inc.setIdInscripcion(rs.getInt("idInscripto"));
+               Alumno alum = alumData.buscarAlumno(rs.getInt("idAlumno"));
+               Materia mate = matData.buscarMateria(rs.getInt("idMateria"));
+               inc.setAlumno(alum);
+               inc.setMateria(mate);
+               inc.setNota(rs.getDouble("nota"));
+               cursada.add(inc);
+               ps.close();
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripción" + ex.getMessage());
+        }
+        return cursada;
+        }
 }

@@ -53,10 +53,16 @@ public class Transversal {
 //       ---- prueba del metodo actualizarnota---
          //incd.actualizarNota(6, 3, 6);
 //      ---  Pruba de metodo borrarIncripcion---
-          incd.borrarInscripcion(7, 2);
+          //incd.borrarInscripcion(7, 2);
+//      --- Pruba de metodo obtenerInscricion---
+        for (Inscripcion in: incd.obtenerInscripciones()) {
+           System.out.println("id"+ in.getIdInscripcion());
+           System.out.println("apellido"+ in.getAlumno().getApellido());
+           System.out.println("materia"+in.getMateria().getNombre());
       }
  
        
        }
+}
     
 
