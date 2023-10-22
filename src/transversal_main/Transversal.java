@@ -66,14 +66,14 @@ public class Transversal {
        System.out.println("Modificadación exitosa: \n" + mat1);
       */
   //      matData.eliminarMateria(27);
-      /* 
+       
         List<Materia> listaMateria = matData.listarMateria();
         System.out.println("\nLista de materias datos de alta:\n");
         for (Materia materia : listaMateria) {
             System.out.println("-ID : " + materia.getIdMateria() + " Nombre: " + materia.getNombre() + " Año: " + materia.getAnioMateria() + "\n") ;
         }
        
-        */
+      
         
 //        AlumnoData ad = new AlumnoData();
 //        MateriaData md = new MateriaData();
@@ -83,15 +83,15 @@ public class Transversal {
 //        Materia prog1 = md.buscarMateria(2);
 //        Inscripcion ins1 = new Inscripcion(10, gomez, prog1);
 //        id.guardarInscripcion(ins1);
-
-AlumnoData ad = new AlumnoData();
-MateriaData md= new MateriaData();
-InscripcionData id= new InscripcionData();
-
-Alumno sebaAlumno=ad.buscarAlumno(8);
-Materia lab2Materia=md.buscarMateria(1);
-Inscripcion inscripcion= new Inscripcion(7,sebaAlumno, lab2Materia);
-id.guardarInscripcion(inscripcion);
+//
+//AlumnoData ad = new AlumnoData();
+//MateriaData md= new MateriaData();
+//InscripcionData id= new InscripcionData();
+//
+//Alumno sebaAlumno=ad.buscarAlumno(8);
+//Materia lab2Materia=md.buscarMateria(1);
+//Inscripcion inscripcion= new Inscripcion(7,sebaAlumno, lab2Materia);
+//id.guardarInscripcion(inscripcion);
 }
 }
     
