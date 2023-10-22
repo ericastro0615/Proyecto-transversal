@@ -156,7 +156,7 @@ public class InscripcionData {
                ps.close();
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripción" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, " Error al acceder a la tabla inscripción" + ex.getMessage());
         }
         return cursada;
         }
