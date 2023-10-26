@@ -19,7 +19,7 @@ public class MenuView extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         //tam por defecto 
-        this.setSize(500, 520);
+        this.setSize(700, 620);
     }
 
     /**
@@ -31,7 +31,8 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ImageIcon iconoEscritorio = new ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/logoULPfull.png"));
+        jMenuItem1 = new javax.swing.JMenuItem();
+        ImageIcon iconoEscritorio = new ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/logoULPfull.jpg"));
         Image escritorioImagen = iconoEscritorio.getImage();
         jDesktopPrincipal = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics g) {
@@ -41,10 +42,19 @@ public class MenuView extends javax.swing.JFrame {
         };
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu_alumno = new javax.swing.JMenu();
+        jMenu_alumnoAlta = new javax.swing.JMenuItem();
         jMenu_materia = new javax.swing.JMenu();
+        jMenuMateria = new javax.swing.JMenuItem();
         jMenu_inscripcion = new javax.swing.JMenu();
+        jMenuManejoInscripcion = new javax.swing.JMenuItem();
+        jMenuManejoNota = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jDesktopPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPrincipal.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jDesktopPrincipalLayout = new javax.swing.GroupLayout(jDesktopPrincipal);
         jDesktopPrincipal.setLayout(jDesktopPrincipalLayout);
@@ -58,12 +68,42 @@ public class MenuView extends javax.swing.JFrame {
         );
 
         jMenu_alumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/alumno.png"))); // NOI18N
+        jMenu_alumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_alumnoActionPerformed(evt);
+            }
+        });
+
+        jMenu_alumnoAlta.setText("Alta alumno");
+        jMenu_alumno.add(jMenu_alumnoAlta);
+
         jMenuBar1.add(jMenu_alumno);
 
         jMenu_materia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/materia.png"))); // NOI18N
+
+        jMenuMateria.setText("Alta materia");
+        jMenu_materia.add(jMenuMateria);
+
         jMenuBar1.add(jMenu_materia);
 
         jMenu_inscripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/inscripcion.png"))); // NOI18N
+
+        jMenuManejoInscripcion.setText("Modificar inscripción");
+        jMenuManejoInscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuManejoInscripcionActionPerformed(evt);
+            }
+        });
+        jMenu_inscripcion.add(jMenuManejoInscripcion);
+
+        jMenuManejoNota.setText("Modificar nota");
+        jMenuManejoNota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuManejoNotaActionPerformed(evt);
+            }
+        });
+        jMenu_inscripcion.add(jMenuManejoNota);
+
         jMenuBar1.add(jMenu_inscripcion);
 
         setJMenuBar(jMenuBar1);
@@ -87,6 +127,21 @@ public class MenuView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenu_alumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_alumnoActionPerformed
+            // TODO add your handling code here:
+            jDesktopPrincipal.removeAll();
+            jDesktopPrincipal.repaint();
+            
+    }//GEN-LAST:event_jMenu_alumnoActionPerformed
+
+    private void jMenuManejoInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuManejoInscripcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuManejoInscripcionActionPerformed
+
+    private void jMenuManejoNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuManejoNotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuManejoNotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,7 +181,12 @@ public class MenuView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPrincipal;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuManejoInscripcion;
+    private javax.swing.JMenuItem jMenuManejoNota;
+    private javax.swing.JMenuItem jMenuMateria;
     private javax.swing.JMenu jMenu_alumno;
+    private javax.swing.JMenuItem jMenu_alumnoAlta;
     private javax.swing.JMenu jMenu_inscripcion;
     private javax.swing.JMenu jMenu_materia;
     // End of variables declaration//GEN-END:variables
