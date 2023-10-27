@@ -25,33 +25,7 @@ public class InscripcionData {
          this.conexion=Conexion.getConexion();
      }
     
-     /*
-     public void guardarInscripcion (Inscripcion inscri)  {
-         String sqlGuardarInscri = "INSERT INTO inscripción (nota, idAlumno, idMateria ) "
-                 + " VALUES (?, ?, ? )";
-         try {
-             System.out.println("ingresando al metodo guardarMateria");
-             PreparedStatement ps = conexion.prepareStatement(sqlGuardarInscri, Statement.RETURN_GENERATED_KEYS);
-             //setear y luego envio datos con update
-             
-             ps.setDouble(1, inscri.getNota()); 
-              ps.setInt(2, inscri.getAlumno().getIdAlumno());
-              ps.setInt(3, inscri.getMateria().getIdMateria());
-             ps.executeUpdate();
-             ResultSet  rs = ps.getGeneratedKeys();
-             if (rs.next()) {
-                 inscri.setIdInscripcion(rs.getInt(1));
-                 JOptionPane.showMessageDialog(null, "Inscripción correcta"); 
-             }else {
-                   JOptionPane.showMessageDialog(null, "Inscripción correcta"); 
-             }
-             ps.close();
-         } catch (Exception ex) {
-               JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripción" + ex.getMessage());
-         }   
-       
-     }
-*/
+
      
      public void guardarInscripcion(Inscripcion insc){
         String sql= "INSERT INTO inscripción(nota, idAlumno, idMateria)"
