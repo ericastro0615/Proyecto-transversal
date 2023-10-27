@@ -91,13 +91,13 @@ public class Transversal {
          InscripcionData id=new InscripcionData();
       
          
-         /*guardar una Inscripcionn 
+        //guardar una Inscripcionn 
         Alumno b1 = ad.buscarAlumno(10);
         Materia prog1 = md.buscarMateria(3);
         Inscripcion ins1 = new Inscripcion(10, b1, prog1);
-   //     id.guardarInscripcion(ins1);
+        id.guardarInscripcion(ins1);
  
-     */    
+      
 
       
     //    id.borrarInscripcion(16, 7);
@@ -142,11 +142,10 @@ public class Transversal {
             System.out.println("el n° de id de alumno, no existe o es incorrecto");
         }
           
-          
      */
       
       
-    
+    /*
 //            materias NO cursadas
             List<Materia> materias=id.materiasNoCursadasPorAlumno(10);
             if (materias.isEmpty()!=true){
@@ -157,6 +156,9 @@ public class Transversal {
                  System.out.println("id incorrecto");
             }
             
+            
+            */
+      /*      
       // ---- alumnos cursantes x IDmateria
       
   List<Alumno> alumnosCursandoMateria = id.alumnosPorMateria(2);
@@ -174,7 +176,7 @@ public class Transversal {
             }
         }
 
-
+*/
 
     }
 

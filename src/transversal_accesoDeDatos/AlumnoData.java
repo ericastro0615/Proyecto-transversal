@@ -39,7 +39,7 @@ public class AlumnoData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 alumno.setIdAlumno(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Alumno añadido con exito.");
+                JOptionPane.showMessageDialog(null, "Alumno añadido con exito");
             }
             ps.close();
 
@@ -104,7 +104,7 @@ public class AlumnoData {
              ps.setInt(1,idAlumno );
             int queryExitosa = ps.executeUpdate();
              if (queryExitosa>0) {
-                JOptionPane.showMessageDialog(null, "Datos del alumno eliminado. De estado 1 a 0" );
+                JOptionPane.showMessageDialog(null, "Alumno eliminado " );
             } 
             
         } catch (SQLException ex) {
@@ -133,6 +133,7 @@ public class AlumnoData {
                 //se contruye obj alumno con los setters obt de DB
                 alumno= new Alumno();
                 alumno.setDni(rs.getInt("dni")); 
+                alumno.setIdAlumno(idAlumno);
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre")); 
                 alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());

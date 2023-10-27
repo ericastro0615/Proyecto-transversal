@@ -60,11 +60,11 @@ public class MenuView extends javax.swing.JFrame {
         jDesktopPrincipal.setLayout(jDesktopPrincipalLayout);
         jDesktopPrincipalLayout.setHorizontalGroup(
             jDesktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 347, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         jDesktopPrincipalLayout.setVerticalGroup(
             jDesktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 239, Short.MAX_VALUE)
+            .addGap(0, 260, Short.MAX_VALUE)
         );
 
         jMenu_alumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/alumno.png"))); // NOI18N
@@ -75,6 +75,11 @@ public class MenuView extends javax.swing.JFrame {
         });
 
         jMenu_alumnoAlta.setText("Alta alumno");
+        jMenu_alumnoAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_alumnoAltaActionPerformed(evt);
+            }
+        });
         jMenu_alumno.add(jMenu_alumnoAlta);
 
         jMenuBar1.add(jMenu_alumno);
@@ -112,17 +117,11 @@ public class MenuView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jDesktopPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+            .addComponent(jDesktopPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jDesktopPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+            .addComponent(jDesktopPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -142,6 +141,11 @@ public class MenuView extends javax.swing.JFrame {
     private void jMenuManejoNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuManejoNotaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuManejoNotaActionPerformed
+
+    private void jMenu_alumnoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_alumnoAltaActionPerformed
+        // TODO add your handling code here:
+        FormularioAlumno nAlumno = new FormularioAlumno();
+    }//GEN-LAST:event_jMenu_alumnoAltaActionPerformed
 
     /**
      * @param args the command line arguments
