@@ -105,7 +105,6 @@ public class MateriaData {
            ps.setInt(2, materia.getAnioMateria());
            ps.setBoolean(3, materia.isActivo());
            ps.setInt(4, materia.getIdMateria());
-           
            ps.executeUpdate();
            ps.close();
                      JOptionPane.showMessageDialog(null, "Materia actualizada correctamente"   );

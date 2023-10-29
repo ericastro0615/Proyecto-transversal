@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
 
 
 public class MenuView extends javax.swing.JFrame {
@@ -15,6 +16,7 @@ public class MenuView extends javax.swing.JFrame {
      */
     public MenuView() {
         initComponents();
+        
         this.setLocationRelativeTo(null);
         //tam por defecto 
         this.setSize(700, 620);
@@ -46,7 +48,9 @@ public class MenuView extends javax.swing.JFrame {
         jMenu_inscripcion = new javax.swing.JMenu();
         jMenuManejoInscripcion = new javax.swing.JMenuItem();
         jMenuManejoNota = new javax.swing.JMenuItem();
-        jMenu_inscripcion1 = new javax.swing.JMenu();
+        jMenu_alumnosPorMateria = new javax.swing.JMenu();
+        jMenuAltaMateria1 = new javax.swing.JMenuItem();
+        jMenu_sali = new javax.swing.JMenu();
         jMenuManejoNota1 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
@@ -59,11 +63,11 @@ public class MenuView extends javax.swing.JFrame {
         jDesktopPrincipal.setLayout(jDesktopPrincipalLayout);
         jDesktopPrincipalLayout.setHorizontalGroup(
             jDesktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 499, Short.MAX_VALUE)
         );
         jDesktopPrincipalLayout.setVerticalGroup(
             jDesktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 415, Short.MAX_VALUE)
+            .addGap(0, 485, Short.MAX_VALUE)
         );
 
         jMenu_alumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/alumno.png"))); // NOI18N
@@ -102,7 +106,7 @@ public class MenuView extends javax.swing.JFrame {
 
         jMenu_inscripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/inscripcion.png"))); // NOI18N
 
-        jMenuManejoInscripcion.setText("Modificar inscripción");
+        jMenuManejoInscripcion.setText("Manejo de inscripción");
         jMenuManejoInscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuManejoInscripcionActionPerformed(evt);
@@ -120,10 +124,32 @@ public class MenuView extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu_inscripcion);
 
-        jMenu_inscripcion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/cerrar-sesion.png"))); // NOI18N
-        jMenu_inscripcion1.addActionListener(new java.awt.event.ActionListener() {
+        jMenu_alumnosPorMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/buscar (1).png"))); // NOI18N
+        jMenu_alumnosPorMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_inscripcion1ActionPerformed(evt);
+                jMenu_alumnosPorMateriaActionPerformed(evt);
+            }
+        });
+
+        jMenuAltaMateria1.setText("Alumnos por materia");
+        jMenuAltaMateria1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAltaMateria1ActionPerformed(evt);
+            }
+        });
+        jMenu_alumnosPorMateria.add(jMenuAltaMateria1);
+
+        jMenuBar1.add(jMenu_alumnosPorMateria);
+
+        jMenu_sali.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/cerrar-sesion.png"))); // NOI18N
+        jMenu_sali.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu_saliMouseClicked(evt);
+            }
+        });
+        jMenu_sali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_saliActionPerformed(evt);
             }
         });
 
@@ -132,9 +158,9 @@ public class MenuView extends javax.swing.JFrame {
                 jMenuManejoNota1ActionPerformed(evt);
             }
         });
-        jMenu_inscripcion1.add(jMenuManejoNota1);
+        jMenu_sali.add(jMenuManejoNota1);
 
-        jMenuBar1.add(jMenu_inscripcion1);
+        jMenuBar1.add(jMenu_sali);
 
         setJMenuBar(jMenuBar1);
 
@@ -146,9 +172,7 @@ public class MenuView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 7, Short.MAX_VALUE))
+            .addComponent(jDesktopPrincipal)
         );
 
         pack();
@@ -163,6 +187,13 @@ public class MenuView extends javax.swing.JFrame {
 
     private void jMenuManejoInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuManejoInscripcionActionPerformed
         // TODO add your handling code here:
+        jDesktopPrincipal.removeAll();
+        jDesktopPrincipal.repaint();
+        FormularioInscripcion formularioInscripcion = new FormularioInscripcion();
+        formularioInscripcion.setVisible(true);
+        jDesktopPrincipal.add(formularioInscripcion);
+        jDesktopPrincipal.moveToFront(formularioInscripcion);
+        formularioInscripcion.getContentPane().setBackground(new Color(234, 250, 241  ));
     }//GEN-LAST:event_jMenuManejoInscripcionActionPerformed
 
     private void jMenuManejoNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuManejoNotaActionPerformed
@@ -185,10 +216,10 @@ public class MenuView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuManejoNota1ActionPerformed
 
-    private void jMenu_inscripcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_inscripcion1ActionPerformed
+    private void jMenu_saliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_saliActionPerformed
         // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jMenu_inscripcion1ActionPerformed
+   
+    }//GEN-LAST:event_jMenu_saliActionPerformed
 
     private void jMenu_materiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_materiaActionPerformed
         // TODO add your handling code here:
@@ -204,6 +235,20 @@ public class MenuView extends javax.swing.JFrame {
         jDesktopPrincipal.add(fm);
         jDesktopPrincipal.moveToFront(fm);
     }//GEN-LAST:event_jMenuAltaMateriaActionPerformed
+
+    private void jMenu_saliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_saliMouseClicked
+        // TODO add your handling code here:
+         dispose(); // Cierra la ventana
+         System.exit(0); // Sale de la aplicación por completo
+    }//GEN-LAST:event_jMenu_saliMouseClicked
+
+    private void jMenuAltaMateria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAltaMateria1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuAltaMateria1ActionPerformed
+
+    private void jMenu_alumnosPorMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_alumnosPorMateriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu_alumnosPorMateriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,6 +288,7 @@ public class MenuView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPrincipal;
     private javax.swing.JMenuItem jMenuAltaMateria;
+    private javax.swing.JMenuItem jMenuAltaMateria1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuManejoInscripcion;
@@ -250,8 +296,9 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuManejoNota1;
     private javax.swing.JMenu jMenu_alumno;
     private javax.swing.JMenuItem jMenu_alumnoAlta;
+    private javax.swing.JMenu jMenu_alumnosPorMateria;
     private javax.swing.JMenu jMenu_inscripcion;
-    private javax.swing.JMenu jMenu_inscripcion1;
     private javax.swing.JMenu jMenu_materia;
+    private javax.swing.JMenu jMenu_sali;
     // End of variables declaration//GEN-END:variables
 }

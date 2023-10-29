@@ -55,9 +55,9 @@ public class Transversal {
       ////---------------- materia 
       
       
-  //     Materia mat1 = new Materia("analisis computacional", 3, true);
- //    MateriaData matData = new MateriaData();
- //       matData.guardarMateria(mat1);
+       Materia mat1 = new Materia("analisis computacional", 3, true);
+     MateriaData matData = new MateriaData();
+     //matData.guardarMateria(mat1);
     /*
        Materia materiaEncontrada = matData.buscarMateria(19);
        if (materiaEncontrada!=null) {
@@ -66,11 +66,11 @@ public class Transversal {
            System.out.println("No se ha encontrado una materia con el ID ingresado");
        }
 */
-    /*
+    
     
        matData.modificarMateria(mat1);
        System.out.println("Modificadación exitosa: \n" + mat1);
-     */
+     
    //    matData.eliminarMateria(3);
      
    /*
