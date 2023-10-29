@@ -198,6 +198,14 @@ public class MenuView extends javax.swing.JFrame {
 
     private void jMenuManejoNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuManejoNotaActionPerformed
         // TODO add your handling code here:
+        jDesktopPrincipal.removeAll();
+        jDesktopPrincipal.repaint();
+        FormularioActualizacionDeNotas formularioActualizacionDeNotas = new FormularioActualizacionDeNotas();
+        formularioActualizacionDeNotas.setVisible(true);
+        jDesktopPrincipal.add(formularioActualizacionDeNotas);
+        jDesktopPrincipal.moveToFront(formularioActualizacionDeNotas);
+       //el color de la ventana del form alumno se setea desde el menu principal, escala RGB
+        formularioActualizacionDeNotas.getContentPane().setBackground(new Color(239, 235, 233   ));
     }//GEN-LAST:event_jMenuManejoNotaActionPerformed
 
     private void jMenu_alumnoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_alumnoAltaActionPerformed

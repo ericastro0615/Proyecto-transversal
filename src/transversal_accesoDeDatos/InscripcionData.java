@@ -95,30 +95,41 @@ public class InscripcionData {
        
        
        
-       
-        public List<Inscripcion> obtenerInscripciones(){
-            ArrayList<Inscripcion>  cursada = new ArrayList<>();
-            String sql = "SELECT * FROM inscripción ";
+    public List<Inscripcion> obtenerInscripciones(int idAlumno) {
+        ArrayList<Inscripcion> cursada = new ArrayList<>();
+        String sql = "SELECT i.idInscripto, i.idAlumno, m.idMateria, m.nombre FROM inscripción i"
+                + " JOIN materia m ON i.idMateria = materia.idMateria "
+                + " WHERE i.idAlumno = ?";
+
         try {
             PreparedStatement ps = conexion.prepareStatement(sql);
-            ResultSet  rs = ps.executeQuery();
-            while(rs.next()){
-               Inscripcion inc = new Inscripcion();
-               inc.setIdInscripcion(rs.getInt("idInscripto"));
-               Alumno alum = alumData.buscarAlumno(rs.getInt("idAlumno"));
-               Materia mate = matData.buscarMateria(rs.getInt("idMateria"));
-               inc.setAlumno(alum);
-               inc.setMateria(mate);
-               inc.setNota(rs.getDouble("nota"));
-               cursada.add(inc);
-               ps.close();
+            ps.setInt(1, idAlumno); // Establecer el valor del parámetro
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Inscripcion inc = new Inscripcion();
+                inc.setIdInscripcion(rs.getInt("idInscripcion"));
+                Alumno alum = alumData.buscarAlumno(rs.getInt("idAlumno"));
+                inc.setAlumno(alum);
+                
+                Materia mate = matData.buscarMateria(rs.getInt("idMateria"));
+                //mate.setIdMateria(rs.getInt("idMateria"));
+                mate.setNombre(rs.getString("nombre"));
+                inc.setMateria(mate);
+                inc.setNota(rs.getDouble("nota"));
+                cursada.add(inc);
             }
+
+            ps.close(); // Cerrar PreparedStatement fuera del bucle
+
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripción" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion: " + ex.getMessage());
         }
+
         return cursada;
-        }
-        
+    }
+
+
         
         
         
@@ -197,7 +208,7 @@ public class InscripcionData {
             }
         } catch (SQLException ex) {
               JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripción" + ex.getMessage());
-          //  e.printStackTrace();
+           ex.printStackTrace();
         } 
         return materiasNoCursadasXalum;
     }

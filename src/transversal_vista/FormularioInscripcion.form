@@ -25,52 +25,54 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButton_anularInscripcion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="jButton_salir" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel_tituloInscripcionFormulario" min="-2" pref="300" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-          </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="430" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jRadioButton_materiasInscriptas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                              <Component id="jRadioButton_materiasNOInscriptas" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="jLabel1_alumno" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="jcomboBoxAlumno" min="-2" pref="341" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jScrollPane1" min="-2" pref="430" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jRadioButton_materiasInscriptas" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_materiasNOInscriptas" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jButton2_inscribir" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="jButton_anularInscripcion" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButton_salir" min="-2" pref="92" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="jLabel1_alumno" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jcomboBoxAlumno" min="-2" pref="341" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
           </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                  <Component id="jButton2_inscribir" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="382" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel_tituloInscripcionFormulario" min="-2" pref="300" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jSeparator1" min="-2" pref="373" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
       </Group>
@@ -79,7 +81,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jLabel_tituloInscripcionFormulario" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1_alumno" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jcomboBoxAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -89,23 +93,17 @@
                   <Component id="jRadioButton_materiasInscriptas" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jRadioButton_materiasNOInscriptas" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="165" max="-2" attributes="0"/>
               <EmptySpace pref="24" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jButton_salir" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton_anularInscripcion" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton_salir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton_anularInscripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton2_inscribir" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="392" max="32767" attributes="0"/>
-                  <Component id="jButton2_inscribir" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -132,6 +130,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Alumno&gt;"/>
@@ -176,6 +175,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="jButton_anularInscripcion">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/transversal_accesoDeDatos/recursos/borrador.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Anular inscripci&#xf3;n"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
@@ -185,6 +187,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2_inscribir">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/transversal_accesoDeDatos/recursos/inscribir.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Inscribir"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
@@ -207,6 +212,8 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Listado de materias"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
     </Component>
   </SubComponents>
 </Form>

@@ -118,16 +118,17 @@ public class Transversal {
     
    */
 
-/* inscripciones por alumno
-        List<Inscripcion> listaInscripcionesAlumno = id.obtenerInscripcionesPorAlumno(10);// 
+// inscripciones por alumno
+        List<Inscripcion> listaInscripcionesAlumno = id.obtenerInscripcionesPorAlumno(10); 
         if (listaInscripcionesAlumno.isEmpty() != true) {
             for (Inscripcion aux : listaInscripcionesAlumno) {             
-                System.out.println("Alumno: " + aux.getAlumno().getNombre() + " " + aux.getAlumno().getApellido() + ", se encuentra inscripto en: " + aux.getMateria().getNombre());
+                System.out.println( aux.getAlumno().getNombre() + " " + aux.getAlumno().getApellido() + ", se encuentra inscripto en: " + aux.getMateria().getNombre() +"\n"
+                        + " nota: " + ins1.getNota());
             }
         } else {
             System.out.println("El id alumno que ingresaste no está inscripto en ninguna materia");
         }
-*/
+
 
 
       /*    
