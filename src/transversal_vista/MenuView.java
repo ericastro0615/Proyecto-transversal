@@ -125,11 +125,6 @@ public class MenuView extends javax.swing.JFrame {
         jMenuBar1.add(jMenu_inscripcion);
 
         jMenu_alumnosPorMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transversal_accesoDeDatos/recursos/buscar (1).png"))); // NOI18N
-        jMenu_alumnosPorMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_alumnosPorMateriaActionPerformed(evt);
-            }
-        });
 
         jMenuAltaMateria1.setText("Alumnos por materia");
         jMenuAltaMateria1.addActionListener(new java.awt.event.ActionListener() {
@@ -251,12 +246,15 @@ public class MenuView extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu_saliMouseClicked
 
     private void jMenuAltaMateria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAltaMateria1ActionPerformed
-        // TODO add your handling code here:
+        
+       jDesktopPrincipal.removeAll();
+        jDesktopPrincipal.repaint();
+        FormularioConsultaAlumnoPorMateria fcAyM = new FormularioConsultaAlumnoPorMateria();
+        fcAyM.setVisible(true);
+        jDesktopPrincipal.add(fcAyM);
+        jDesktopPrincipal.moveToFront(fcAyM);
+        fcAyM.getContentPane().setBackground(new Color(224, 247, 250));
     }//GEN-LAST:event_jMenuAltaMateria1ActionPerformed
-
-    private void jMenu_alumnosPorMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_alumnosPorMateriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu_alumnosPorMateriaActionPerformed
 
     /**
      * @param args the command line arguments

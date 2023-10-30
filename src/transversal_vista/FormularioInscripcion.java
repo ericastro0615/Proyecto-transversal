@@ -237,8 +237,9 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
            Materia materia = new Materia(idMateria, nombreMateria, anio, true);
            Inscripcion ins = new Inscripcion(0, al, materia);
            inscripcionData.guardarInscripcion(ins);
-           borrarFilas();
+           
         }
+        borrarFilas();
     }//GEN-LAST:event_jButton2_inscribirActionPerformed
 
     private void jButton_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_salirActionPerformed
@@ -254,15 +255,17 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
             Alumno al = (Alumno) jcomboBoxAlumno.getSelectedItem();
             int idMateria = (Integer) modeloTabla.getValueAt(filaSeleccionadaTabla, 0);
             inscripcionData.borrarInscripcion(al.getIdAlumno(), idMateria);
-            borrarFilas();
+           
         }else {
             JOptionPane.showMessageDialog(this, "Debe seleccionar una materia, para poder anular la inscripción");
         }
+         borrarFilas();
     }//GEN-LAST:event_jButton_anularInscripcionActionPerformed
     
     
     
     private void datosInscriptas() {
+        borrarFilas();
         Alumno alumnoSeleccionado = (Alumno) jcomboBoxAlumno.getSelectedItem();
         List<Materia> lista = inscripcionData.obtenerMateriasCursadas(alumnoSeleccionado.getIdAlumno());
         for (Materia m : lista) {
@@ -276,6 +279,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     
 
     private void datosDeNoInscriptos() {
+        borrarFilas();
         Alumno selAlumnoNoInscripto = (Alumno) jcomboBoxAlumno.getSelectedItem();
         listaMateria = (ArrayList) inscripcionData.materiasNoCursadasPorAlumno(selAlumnoNoInscripto.getIdAlumno());
          for (Materia m : listaMateria) {

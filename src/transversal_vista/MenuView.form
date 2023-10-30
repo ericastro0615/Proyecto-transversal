@@ -80,9 +80,6 @@
               <Image iconType="3" name="/transversal_accesoDeDatos/recursos/buscar (1).png"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu_alumnosPorMateriaActionPerformed"/>
-          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuAltaMateria1">
               <Properties>

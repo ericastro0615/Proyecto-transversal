@@ -22,9 +22,9 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
     private Materia materiaActual = null;
     private List <Alumno> listaAlumno;
     private List <Materia> listaMateria;
-    private List <Inscripcion> listaInscripcion;
-    private InscripcionData inscripData;
-    private Materia materia; 
+    //private List <Inscripcion> listaInscripcion;
+   // private InscripcionData inscripData;
+   // private Materia materia; 
     
     
     
@@ -217,17 +217,15 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
       
         try {
-           
          materiaActual= materiaData.buscarMateria(Integer.parseInt(jTextField_codMateria.getText()));
            
-            if (materiaActual.getIdMateria() >0) {
-                
+            if (materiaActual!=null) {
                 jTextField_nombreMateria.setText(materiaActual.getNombre());
                 jTextField_anioMateria1.setText( Integer.toString (materiaActual.getAnioMateria() ) );
-              //  jCheckBox_Activo.isSelected(materiaActual.isActivo());
-              
+                jCheckBox_Activo.setSelected(materiaActual.isActivo());
             } else {
                  JOptionPane.showMessageDialog(this, "código ingresado no corresponde a una materia registrada");
+                 limpiarCamposPantalla();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Datos incorrectos, reintente nuevamente");
@@ -263,22 +261,19 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton_eliminarActionPerformed
 
     private void jButton_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_guardarActionPerformed
-        // TODO add your handling code here:
         
         try {
              Integer anio = Integer.parseInt(jTextField_anioMateria1.getText());
             String nombre = jTextField_nombreMateria.getText();
             boolean activo = jCheckBox_Activo.isSelected();
-
             if (materiaActual == null) {
-                materiaActual = new Materia(nombre, 7, activo);
+                materiaActual = new Materia(nombre, anio, activo);
                 System.out.println("guardando una nueva");
             } else {
                 materiaActual.setAnioMateria(anio);
                 materiaActual.setNombre(nombre);
                 materiaActual.setActivo(activo); 
             }
-
             materiaData.guardarMateria(materiaActual);
           
         } catch (NumberFormatException e) {
@@ -286,7 +281,6 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
             e.printStackTrace();
             limpiarCamposPantalla();
         }
-
     }//GEN-LAST:event_jButton_guardarActionPerformed
 
     private void jButton_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_salirActionPerformed
