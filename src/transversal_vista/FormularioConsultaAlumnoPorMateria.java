@@ -5,12 +5,12 @@
 package transversal_vista;
 
 import java.util.List;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import transversal_accesoDeDatos.InscripcionData;
 import transversal_accesoDeDatos.MateriaData;
 import transversal_entidades.Alumno;
-import transversal_entidades.Inscripcion;
+//import transversal_entidades.Inscripcion;
 import transversal_entidades.Materia;
 
 
@@ -19,9 +19,9 @@ public class FormularioConsultaAlumnoPorMateria extends javax.swing.JInternalFra
     private DefaultTableModel modeloTabla;
     
     private List<Alumno> listaAlumno =null;
-    private List<Materia> listaMateria;
-    private List<MateriaData> listaMateriaData;
-    private List<Inscripcion> listaInscripcion;
+  //  private List<Materia> listaMateria;
+  //  private List<MateriaData> listaMateriaData;
+   // private List<Inscripcion> listaInscripcion;
     
     private InscripcionData inscData;
     private MateriaData matData;
@@ -155,7 +155,7 @@ public class FormularioConsultaAlumnoPorMateria extends javax.swing.JInternalFra
                     auxAlumno.getApellido(),
                     auxAlumno.getNombre()
                 });
-            }
+            } 
         }
     }//GEN-LAST:event_jcomboBoxMateriaActionPerformed
     
