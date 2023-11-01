@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+ 
 package transversal_vista;
  
 import java.util.List;
@@ -216,22 +213,22 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
     private void jButton_buscarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_buscarMateriaActionPerformed
         // TODO add your handling code here:
       
-        try {
-         materiaActual= materiaData.buscarMateria(Integer.parseInt(jTextField_codMateria.getText()));
-           
-            if (materiaActual!=null) {
-                jTextField_nombreMateria.setText(materiaActual.getNombre());
-                jTextField_anioMateria1.setText( Integer.toString (materiaActual.getAnioMateria() ) );
-                jCheckBox_Activo.setSelected(materiaActual.isActivo());
-            } else {
-                 JOptionPane.showMessageDialog(this, "código ingresado no corresponde a una materia registrada");
-                 limpiarCamposPantalla();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Datos incorrectos, reintente nuevamente");
-            e.printStackTrace();
-            limpiarCamposPantalla();
-        }
+//        try {
+//         materiaActual= materiaData.buscarMateria(Integer.parseInt(jTextField_codMateria.getText()));
+//           
+//            if (materiaActual!=null) {
+//                jTextField_nombreMateria.setText(materiaActual.getNombre());
+//                jTextField_anioMateria1.setText( Integer.toString (materiaActual.getAnioMateria() ) );
+//                jCheckBox_Activo.setSelected(materiaActual.isActivo());
+//            } else {
+//                 JOptionPane.showMessageDialog(this, "código ingresado no corresponde a una materia registrada");
+//                 limpiarCamposPantalla();
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(this, "Datos incorrectos, reintente nuevamente");
+//            e.printStackTrace();
+//            limpiarCamposPantalla();
+//        }
 
     }//GEN-LAST:event_jButton_buscarMateriaActionPerformed
 
@@ -245,37 +242,38 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
 
     private void jButton_nuevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_nuevo2ActionPerformed
         // TODO add your handling code here:
-        limpiarCamposPantalla();
-        materiaActual=null;
+//        limpiarCamposPantalla();
+//        materiaActual=null;
     }//GEN-LAST:event_jButton_nuevo2ActionPerformed
 
     private void jButton_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_eliminarActionPerformed
-        // TODO add your handling code here:
-        if (materiaActual!=null) {
-            materiaData.eliminarMateria(materiaActual.getIdMateria());
-            materiaActual=null;
-            limpiarCamposPantalla();
-        } else  {
-            JOptionPane.showMessageDialog(this, "No hay una materia seleccionada");
-        }
+//        // TODO add your handling code here:
+//        if (materiaActual!=null) {
+//            materiaData.eliminarMateria(materiaActual.getIdMateria());
+//            materiaActual=null;
+//            limpiarCamposPantalla();
+//        } else  {
+//            JOptionPane.showMessageDialog(this, "No hay una materia seleccionada");
+//        }
     }//GEN-LAST:event_jButton_eliminarActionPerformed
 
     private void jButton_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_guardarActionPerformed
         
         try {
-             Integer anio = Integer.parseInt(jTextField_anioMateria1.getText());
+            Integer anio = Integer.parseInt(jTextField_anioMateria1.getText().trim());
             String nombre = jTextField_nombreMateria.getText();
             boolean activo = jCheckBox_Activo.isSelected();
             if (materiaActual == null) {
                 materiaActual = new Materia(nombre, anio, activo);
-                System.out.println("guardando una nueva");
+           //     System.out.println("guardando una nueva");
+                materiaData.guardarMateria(materiaActual);
             } else {
                 materiaActual.setAnioMateria(anio);
                 materiaActual.setNombre(nombre);
                 materiaActual.setActivo(activo); 
+                materiaData.modificarMateria(materiaActual);
+              //  System.out.println("modificando materia");
             }
-            materiaData.guardarMateria(materiaActual);
-          
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Datos incorrectos, reintente nuevamente");
             e.printStackTrace();

@@ -40,7 +40,7 @@ public class FormularioActualizacionDeNotas extends javax.swing.JInternalFrame {
         initComponents();
        
         aluData = new AlumnoData();
-        listaAlumno=  aluData.listarAlumnos();
+      
         //se restringe la edicion de la cabecera anio y nombre(col 0 y ). solo editable Nota col=2
         modeloTabla = new DefaultTableModel() {
             public boolean  isCellEditable (int fil, int col) {
@@ -201,20 +201,20 @@ public class FormularioActualizacionDeNotas extends javax.swing.JInternalFrame {
 
     private void jcomboBoxAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcomboBoxAlumnoActionPerformed
         // TODO add your handling code here:
-        borrarFilas ();
-           //se "rescata" el alumno seleccionado en el jcomboBox. El combo box devuelve como un objeto asi que es necesario castear 
-       
+        borrarFilas();
+        //se "rescata" el alumno seleccionado en el jcomboBox. El combo box devuelve como un objeto asi que es necesario castear 
+
         Alumno alumnoElegido = (Alumno) jcomboBoxAlumno.getSelectedItem();
-        
+
         listaInscripcion = inscripData.obtenerInscripcionesPorAlumno(alumnoElegido.getIdAlumno());
-        if (!listaInscripcion.isEmpty() ) {
+        if (!listaInscripcion.isEmpty()) {
             for (Inscripcion aux : listaInscripcion) {
                 //necesario hacer un arreglo para mostrar en tabla los datos en caso que la lista de alumno inscriptos no sea nula
-                modeloTabla.addRow(new Object [] {
-                       aux.getMateria().getIdMateria(),
-                       aux.getMateria().getNombre(),
-                       aux.getNota()
-                } );
+                modeloTabla.addRow(new Object[]{
+                    aux.getMateria().getIdMateria(),
+                    aux.getMateria().getNombre(),
+                    aux.getNota()
+                });
             }
         }
     }//GEN-LAST:event_jcomboBoxAlumnoActionPerformed
